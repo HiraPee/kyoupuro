@@ -11,6 +11,7 @@ def main():
   from functools import lru_cache, reduce
   from itertools import count, cycle, accumulate, chain, groupby, islice, product, permutations, combinations, combinations_with_replacement
   from operator import itemgetter
+  from decimal import Decimal, ROUND_HALF_UP, ROUND_HALF_EVEN
   import math
   inf = 3074457345618258602
   sys.setrecursionlimit(2147483647)
@@ -28,18 +29,24 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
+  dic = {}
+
+  def f(n) :
+    if n == 0:
+      return 1
+
+    if n in dic:
+      return dic[n]
+
+    res = f(n//2) + f(n//3)
+    dic[n] = res
+    return res
+
   n = I()
-  s = S()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  ans = f(n)
 
+  print(ans)
 
 
 

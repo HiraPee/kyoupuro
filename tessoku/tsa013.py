@@ -28,17 +28,19 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
-  s = S()
+  n ,k =Is_s()
+  a = i_list()
+
+  R = [0] * 100009
+  A = [0] * 100009
+
 
   for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+
+    if i == 0  ? R[i] = 1 : R[i] = R[i-1]
+
+    while R[i] < n and A[R[i] + 1] - A[R[i]]  <= k :
+      R[i] += 1
 
 
 

@@ -28,17 +28,21 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
-  s = S()
+  n,x = Is_s()
+  a = i_list()
+
+  price = 0
 
   for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+    if i%2 == 0:
+      price += a[i]
+    else :
+      price += a[i] - 1
+
+  if price <= x :
+    print('Yes')
+  else :
+    print('No')
 
 
 

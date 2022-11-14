@@ -28,17 +28,20 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
-  s = S()
+  sets = {}
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  for n in ['H','2B','3B','HR']:
+    sets[n] = 0
+
+
+  for i in range(4):
+    s = S()
+    sets[s] += 1
+
+  #print(sets)
+
+
+  print('Yes') if  not 0 in sets.values() else print('No')
 
 
 

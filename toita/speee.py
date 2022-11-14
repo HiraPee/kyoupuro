@@ -29,17 +29,13 @@ def main():
   def Is_s(): return map(int,input().split())
 
   n = I()
-  s = S()
-
+  en_list = []
   for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+      s  = S()
+      en_list.append(s)
+  en_list = set(en_list)
 
+  print(en_list)
 
 
 

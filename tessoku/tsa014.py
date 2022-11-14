@@ -28,17 +28,37 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
-  s = S()
+  n,k = Is_s()
+  A = i_list()
+  B = i_list()
+  C = i_list()
+  D = i_list()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  P =[]
+
+  for a in A :
+    for b in B :
+      P.append(a+b)
+
+  Q = []
+
+  for c in C :
+    for d in D :
+      Q.append(c+d)
+
+  Q.sort()
+
+
+  for p in P :
+    bis = bisect_left(Q, k- p)
+    if bis < n*n and Q[bis] == k -p :
+      print("Yes")
+      exit()
+
+
+  print("No")
+
+
 
 
 

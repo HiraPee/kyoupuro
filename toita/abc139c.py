@@ -28,19 +28,24 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
-  s = S()
+  n =I()
+  h = i_list()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  ans =  0
+  cnt = 0
 
+  for i in range(1,n):
 
+    if h[i-1] >= h[i] :
+      cnt += 1
+      ans = max(cnt,ans)
+    else:
+      ans = max(cnt,ans)
+      cnt = 0
+
+  #ans = max(cnt,ans)
+
+  print(ans)
 
 
 if __name__ == '__main__' :

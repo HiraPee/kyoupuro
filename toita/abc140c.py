@@ -28,17 +28,27 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
-  s = S()
+  n =I()
+  b = i_list()
+
+  a = []
 
   for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+    if i == 0 :
+      a.append(b[0])
+
+    if i == n-1 :
+      a.append(b[len(b)-1])
+
+    if 0 < i and i < n-1 :
+      a.append(min(b[i-1],b[i]))
+
+
+
+
+  #print(a)
+  print(sum(a))
+
 
 
 

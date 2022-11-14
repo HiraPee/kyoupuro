@@ -29,19 +29,19 @@ def main():
   def Is_s(): return map(int,input().split())
 
   n = I()
-  s = S()
+  bin_str = bin(n)[2:]
+  num_list = []
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  for i in range(len(bin_str)-1,-1,-1):
+    if bin_str[i] == '1':
+      num_list.append(len(bin_str)-i-1)
 
-
-
+  for i in range(2**len(num_list)):
+    res = 0
+    for j in range(len(num_list)):
+      if ((i >> j) & 1):
+        res += 2**num_list[j]
+    print(res)
 
 if __name__ == '__main__' :
   main()

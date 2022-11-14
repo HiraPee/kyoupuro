@@ -28,18 +28,25 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
-  s = S()
+  n,k = Is_s()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  a = i_list()
 
+  p = k-1
+  ans = 0
+
+  for i in range(k):
+    num = a[p]
+    while n < a[p]:
+      p -= 1
+    num = a[p]
+    if i % 2 == 1:
+      ans += num
+
+    if n == 0:
+      break
+
+  print(num)
 
 
 

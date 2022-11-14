@@ -28,19 +28,15 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
-  s = S()
+  n,s = Is_s()
+  score_list = []
+  for i in range(n):
+    a,b = Is_s()
+    score_list.append([a,b])
+
+  dp = [0 for _ in range(10**5)]
 
   for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
-
-
 
 
 if __name__ == '__main__' :

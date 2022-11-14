@@ -28,20 +28,14 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
-  s = S()
+  n,x = Is()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  a = i_list()
 
-
-
+  if x in a :
+    print('Yes')
+  else :
+    print('No')
 
 if __name__ == '__main__' :
   main()

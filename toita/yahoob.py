@@ -28,17 +28,25 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
-  s = S()
+  h,w = Is_s()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  masu = []
+  for i in range(h):
+    s = S()
+    masu.append(s)
+
+  t = S()
+  start = []
+
+  for i in range(h):
+    for j in range(h):
+      if t[:1] == masu[i][j] :
+        start.append([i,j])
+
+  if len(start) == 0 :
+    print(0)
+  else :
+    print()
 
 
 

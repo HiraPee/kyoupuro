@@ -29,16 +29,18 @@ def main():
   def Is_s(): return map(int,input().split())
 
   n = I()
-  s = S()
+  a = i_list()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  ans = 99999
+
+  for i in range(1,max(a)+1):
+    ac = a.copy()
+    ac = ac % i
+    ans = min(len(set(ac)),ans)
+
+
+  print(ans)
+
 
 
 

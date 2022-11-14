@@ -28,19 +28,23 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
-  s = S()
+  n,x,y = Is_s()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  tree = {}
 
+  for i in range(n-1):
+    u,v = Is_s()
+    if not u in tree :
+      tree[u] = [v]
+    else :
+      tree[u].append(v)
 
+    if not v in tree :
+      tree[v] = [u]
+    else :
+      tree[v].append(u)
+
+  print(tree)
 
 
 if __name__ == '__main__' :

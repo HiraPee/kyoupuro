@@ -28,18 +28,42 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
+
   n = I()
-  s = S()
+  A = i_list()
+  B = i_list()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  dp = [0] * (n+1)
 
+  dp[1] = 0
+  dp[2] = A[0]
+
+  for i in range(3,n+1):
+    dp[i] = min(dp[i-1]+ A[i-2] ,dp[i-2]+B[i-3])
+
+  #print(dp)
+
+  place = n
+  ans = []
+
+  while True :
+    ans.append(place)
+
+    if place == 1 :
+      break
+
+    if dp[place -1] + A[place -2] == dp[place] :
+      place -= 1
+    else :
+      place -= 2
+
+
+  ans.reverse()
+
+  print(len(ans))
+
+  for a in ans :
+    print(a,end=" ")
 
 
 

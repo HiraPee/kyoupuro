@@ -29,16 +29,22 @@ def main():
   def Is_s(): return map(int,input().split())
 
   n = I()
-  s = S()
+  a = i_list()
+
+  hen = {}
 
   for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+    if a[i] in hen:
+      hen[a[i]] += 1
+    else :
+      hen[a[i]] = 1
+
+  for key in hen.keys() :
+    if hen[key] >= 4 :
+      print("YES")
+      exit()
+
+  print("NO")
 
 
 

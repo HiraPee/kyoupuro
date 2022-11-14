@@ -28,19 +28,18 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
-  s = S()
+  n,q = Is_s()
+
+  num_list = []
 
   for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+    la = i_list()
+    num_list.append(la[1:])
 
 
+  for i in range(q):
+    s,t = Is_s()
+    print(num_list[s-1][t-1])
 
 
 if __name__ == '__main__' :

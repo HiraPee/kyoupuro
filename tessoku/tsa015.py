@@ -29,16 +29,31 @@ def main():
   def Is_s(): return map(int,input().split())
 
   n = I()
-  s = S()
+  A = i_list()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  set_a = sorted(list(set(A)))
+
+  #print(set_a)
+
+  ans_a = {}
+
+  cnt = 1
+
+  for a in set_a :
+    ans_a[a] = cnt
+    cnt += 1
+
+
+  ans = []
+
+  for i in range(len(A)):
+    ans.append(ans_a[A[i]])
+
+
+
+  for a in ans :
+    print(a ,end=(" "))
+
 
 
 

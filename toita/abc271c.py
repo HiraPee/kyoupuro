@@ -29,16 +29,26 @@ def main():
   def Is_s(): return map(int,input().split())
 
   n = I()
-  s = S()
+  a = sorted(i_list())
+
+  manga = {}
 
   for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+    if a[i] in manga :
+      manga[a[i]] += 1
+    else :
+      manga[a[i]] = 1
+
+  book = 1
+  count = 0
+
+  while True :
+    if book in manga:
+      book += 1
+      count += 1
+    else :
+
+
 
 
 

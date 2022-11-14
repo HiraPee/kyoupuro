@@ -12,6 +12,7 @@ def main():
   from itertools import count, cycle, accumulate, chain, groupby, islice, product, permutations, combinations, combinations_with_replacement
   from operator import itemgetter
   import math
+  import copy
   inf = 3074457345618258602
   sys.setrecursionlimit(2147483647)
   readline = sys.stdin.buffer.readline
@@ -29,16 +30,26 @@ def main():
   def Is_s(): return map(int,input().split())
 
   n = I()
-  s = S()
+  Q = i_list()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  sorted_q = sorted(Q)
+
+  aa = 0
+
+  q_index = []
+
+  for a in Q :
+    q_index.append(sorted_q.index(a))
+
+  lists = list(permutations(range(n)))
+
+  ans_index = lists.index(tuple(q_index)) - 1
+
+  ans_lists = lists[ans_index]
+
+  for a in ans_lists :
+    print(sorted_q[a],end=" ")
+
 
 
 

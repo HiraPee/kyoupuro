@@ -28,20 +28,22 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
-  s = S()
+  n,x = Is_s()
+  a = i_list()
+  l,r = 0,len(a)-1
+  while l <= r :
+    m = (l+r)//2
+    if a[m] == x:
+      print(m+1)
+      exit()
+    if a[m] < x:
+      l = m + 1
+      continue
+    if a[m] > x:
+      r = m -1
+      continue
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
-
-
-
+  print(-1)
 
 if __name__ == '__main__' :
   main()

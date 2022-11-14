@@ -29,18 +29,14 @@ def main():
   def Is_s(): return map(int,input().split())
 
   n = I()
-  s = S()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  def f(k):
+    if k == 0 :
+      return 1
+    else :
+      return k *f(k-1)
 
-
+  print(f(n))
 
 
 if __name__ == '__main__' :

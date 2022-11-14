@@ -29,19 +29,10 @@ def main():
   def Is_s(): return map(int,input().split())
 
   n = I()
-  s = S()
-
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
 
 
 
+  print(hex(n)[2:].zfill(2).upper())
 
 if __name__ == '__main__' :
   main()

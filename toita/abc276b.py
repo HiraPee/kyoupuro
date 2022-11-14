@@ -28,19 +28,36 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
-  s = S()
+  n,m = Is_s()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  load = {}
+
+  for i in range(m):
+    A,B = Is_s()
+
+    if A in load :
+      load[A].append(B)
+    else :
+      load[A] = [B]
+
+    if B in load :
+      load[B].append(A)
+    else :
+      load[B] = [A]
 
 
+  #print(load)
+
+  sort_keys = sorted(list(load))
+
+  for i in range(1,n+1) :
+    if i in load.keys() :
+      print(len(load[i]), end= " ")
+      for a in sorted(load[i]):
+        print(a, end=" ")
+      print()
+    else :
+      print(0)
 
 
 if __name__ == '__main__' :

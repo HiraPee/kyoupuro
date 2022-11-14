@@ -3,19 +3,10 @@ def main():
   if sys.implementation.name == 'pypy':
     import pypyjit
     pypyjit.set_param('max_unroll_recursion=1')
-  from math import gcd, floor, ceil, sqrt, isclose, pi, sin, cos, tan, asin, acos, atan, atan2, hypot, degrees, radians, log, log2, log10
-  from array import array
-  from collections import deque, Counter as counter, defaultdict as ddict
-  from bisect import bisect_left, bisect_right
-  from heapq import heappush, heappop, heapify, heappushpop, heapreplace as heappoppush, nlargest, nsmallest
-  from functools import lru_cache, reduce
-  from itertools import count, cycle, accumulate, chain, groupby, islice, product, permutations, combinations, combinations_with_replacement
-  from operator import itemgetter
   import math
   inf = 3074457345618258602
   sys.setrecursionlimit(2147483647)
   readline = sys.stdin.buffer.readline
-  cache = lru_cache(None)
   def input(): return readline().rstrip().decode()
   def S(): return readline().rstrip().decode()
   def Ss(): return readline().rstrip().decode().split(' ')
@@ -28,19 +19,25 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
+  d = I()
   n = I()
-  s = S()
+  event = [0 ] *(d+1)
 
   for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+    l,r = Is()
+    event[l-1] += 1
+    event[r] -= 1
 
+  dp = [0]
+  #print(event)
 
+  for i in range(d+1):
+    dp.append(event[i] + dp[i])
+
+  #print(dp)
+
+  for i in range(1,d+1):
+    print(dp[i])
 
 
 if __name__ == '__main__' :

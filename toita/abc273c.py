@@ -27,21 +27,34 @@ def main():
   def Fs(): return [float(i) for i in readline().rstrip().split(b' ')]
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
-
   n = I()
-  s = S()
+  a = i_list()
 
+  set_a = set(a)
+  a_list = sorted(list(set_a))
+
+  ans_1 = {}
+
+  for i in range(len(a_list)):
+    ans_1[a_list[i]] = len(a_list) -i-1
+
+  #print(ans_1)
+
+  ans_2 = []
+
+  for i in a :
+    ans_2.append(ans_1[i])
+
+  ans_3 = {}
+  for a in ans_2:
+    if a in ans_3:
+      ans_3[a] += 1
+    else :
+      ans_3[a] = 1
   for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
-
-
-
-
+    if i in ans_3.keys():
+      print(ans_3[i])
+    else :
+      print(0)
 if __name__ == '__main__' :
   main()

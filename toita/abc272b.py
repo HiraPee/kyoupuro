@@ -28,20 +28,39 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
-  s = S()
+  n,m = Is_s()
+
+  budoukai = []
+
+  for i in range(m):
+    km = i_list()
+    m = km[1:]
+
+    budoukai.append(m)
+
+    num_list = []
+
+    for i in range(n):
+      num_list.append([])
+      for j in range(n):
+        if i==j :
+          num_list[i].append(True)
+        else :
+          num_list[i].append(False)
+
+  for i in range(len(budoukai)):
+    for j in range(len(budoukai[i])-1):
+      for k in range(j+1,len(budoukai[i])):
+        num_list[budoukai[i][j]-1][budoukai[i][k]-1] = True
+        num_list[budoukai[i][k]-1][budoukai[i][j]-1] = True
 
   for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+    if False in num_list[i] :
+      print('No')
+      exit()
 
 
-
+  print('Yes')
 
 if __name__ == '__main__' :
   main()

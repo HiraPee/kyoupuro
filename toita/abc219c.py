@@ -28,18 +28,11 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
+  x = S()
   n = I()
-  s = S()
-
+  dic = {chr(i + 65): X[i] for i in range(0, 26)}
+  ans = []
   for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
-
 
 
 

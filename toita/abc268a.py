@@ -28,20 +28,9 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
-  s = S()
+  a,b,c,d,e = Is_s()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
-
-
-
+  print(len(set([a,b,c,d,e])))
 
 if __name__ == '__main__' :
   main()

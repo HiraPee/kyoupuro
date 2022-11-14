@@ -29,16 +29,21 @@ def main():
   def Is_s(): return map(int,input().split())
 
   n = I()
-  s = S()
+  a = i_list()
+  x = I()
+
+  upper = sum(a)
+  p = x//upper
+  ans =  p*n
+
+  line = upper*p
 
   for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+    line += a[i]
+    ans += 1
+    if line > x:
+      print(ans)
+      exit()
 
 
 

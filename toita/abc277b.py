@@ -29,17 +29,28 @@ def main():
   def Is_s(): return map(int,input().split())
 
   n = I()
-  s = S()
+
+  s1 = ["H","D","C","S"]
+  s2 = ["A" , "2" , "3" , "4" , "5" , "6" , "7" , "8" , "9" , "T" , "J" , "Q" , "K"]
+
+  jisyo = []
 
   for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
+    s = S()
+    if s[0] in s1:
+      if s[1] in s2:
+        jisyo.append(s)
       else :
-        print('Aoki')
+        print("No")
         exit()
+    else :
+      print("No")
+      exit()
 
+  if len(jisyo) == len(set(jisyo)):
+    print("Yes")
+  else :
+    print("No")
 
 
 

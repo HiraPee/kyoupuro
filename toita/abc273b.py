@@ -11,6 +11,7 @@ def main():
   from functools import lru_cache, reduce
   from itertools import count, cycle, accumulate, chain, groupby, islice, product, permutations, combinations, combinations_with_replacement
   from operator import itemgetter
+  from decimal import Decimal, ROUND_HALF_UP, ROUND_HALF_EVEN
   import math
   inf = 3074457345618258602
   sys.setrecursionlimit(2147483647)
@@ -28,20 +29,16 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
-  s = S()
+  x,k =Is_s()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  str_x = str(x)
 
+  for i in range(k):
+    i += 1
+    #print(x,i)
+    x = int(Decimal(x).quantize(Decimal('1E'+str(i)), rounding=ROUND_HALF_UP))
 
-
+  print(x)
 
 if __name__ == '__main__' :
   main()

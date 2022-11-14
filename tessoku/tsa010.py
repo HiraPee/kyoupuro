@@ -29,17 +29,23 @@ def main():
   def Is_s(): return map(int,input().split())
 
   n = I()
-  s = S()
+  a = i_list()
+  d = I()
+  ruiseki_1 = [0 for _ in range(n+2)]
+  for i in range(1,n+1):
+    ruiseki_1[i] = max(ruiseki_1[i-1],a[i-1])
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  ruiseki_2 = [0 for _ in range(n+2)]
+  for i in range(n,-1,-1):
+    #print(i)
+    ruiseki_2[i] = max(ruiseki_2[i+1],a[i-1])
 
+  #print(ruiseki_1)
+  #print(ruiseki_2)
+
+  for i in range(d):
+    l,r = Is_s()
+    print(max(ruiseki_1[l-1],ruiseki_2[r+1]))
 
 
 

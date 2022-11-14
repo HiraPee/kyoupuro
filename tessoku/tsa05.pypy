@@ -28,19 +28,18 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
-  s = S()
+  #pypyじゃないと通らない
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  n , k = Is_s()
+  cnt = 0
+
+  for red in range(1,n+1):
+    for blue in range(1,n+1):
+      if 0 <  k - red - blue and  k - red - blue <= n:
+        cnt += 1
 
 
+  print(cnt)
 
 
 if __name__ == '__main__' :

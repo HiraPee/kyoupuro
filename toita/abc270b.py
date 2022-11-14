@@ -29,19 +29,16 @@ def main():
   def Is_s(): return map(int,input().split())
 
   n = I()
-  s = S()
+  a = sorted(i_list())
+
+  print(min(a),max(a))
+
+  ans = ""
 
   for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+    ans += a[i]
 
-
-
+  print(ans)
 
 if __name__ == '__main__' :
   main()

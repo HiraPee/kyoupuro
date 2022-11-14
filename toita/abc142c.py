@@ -31,15 +31,24 @@ def main():
   n = I()
   s = S()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  slime_l= []
 
+  preS = s[0]
+  cnt = 0
+
+  for i in range(1,n):
+    nowS = s[i]
+    if preS == nowS :
+      cnt += 1
+    else :
+      slime_l.append([preS,cnt])
+      preS = nowS
+      cnt = 1
+
+  slime_l.append([preS,cnt])
+
+
+  print(len(slime_l))
 
 
 

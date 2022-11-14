@@ -28,17 +28,14 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
+
   s = S()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  if s.rfind('a') == -1 :
+    print(-1)
+  else :
+    print(s.rfind('a') + 1)
+
 
 
 

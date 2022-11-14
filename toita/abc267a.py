@@ -28,19 +28,14 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
   s = S()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  w = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday' ]
 
-
+  for i in range(len(w)):
+    if s == w[i]:
+      print(6-i-1)
+      exit()
 
 
 if __name__ == '__main__' :

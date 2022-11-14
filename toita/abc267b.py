@@ -28,17 +28,38 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
   s = S()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  pins = [[[7,False]],[[4,False]],[[2,False],[8,False]],[[1,False],[5,False]],[[3,False],[9,False]],[[6,False]],[[10,False]]]
+  split = [False for i in range(len(pins))]
+
+  if s[0] == '0':
+    for i in range(10):
+      if s[i] == '0':
+        for j in range(len(pins)):
+          for k in range(len(pins[j])):
+            if pins[j][k][0] == i+1:
+              split[j] = True
+              pins[j][k][1] = True
+
+    #print(pins)
+    #print(split)
+    for i in range(len(pins)):
+      for j in range(i+1,len(pins)):
+        if ( i+1 != j) and not (True in pins[i+1:j])  and split[i] == False and split[j] == False:
+          for k in range(len(pins[i+1:j])):
+            for l in range(len(pins[i+1:j][k])):
+              if pins[i+1:j][k][l][1] == False:
+                break
+              elif len(pins[i+1:j][k]) == l+1 :
+                print('Yes')
+                exit()
+
+    print('No')
+
+  else :
+    print('No')
+
 
 
 

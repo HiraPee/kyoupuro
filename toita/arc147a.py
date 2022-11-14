@@ -29,16 +29,19 @@ def main():
   def Is_s(): return map(int,input().split())
 
   n = I()
-  s = S()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  a = sorted(i_list(),reverse=True)
+  cnt = 0
+
+  while len(a) > 1:
+    #print(a)
+    if a[0] % a[len(a)-1] == 0 :
+      a.remove(0)
+
+    cnt += 1
+
+  print(cnt)
+
 
 
 

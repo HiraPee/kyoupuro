@@ -29,16 +29,16 @@ def main():
   def Is_s(): return map(int,input().split())
 
   n = I()
-  s = S()
+
+  bridge = []
+
+  for i in range(2* 10):
+    bridge.append([])
 
   for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+    a,b = Is_s()
+    bridge[a].append(b)
+    bridge[b].append(a)
 
 
 

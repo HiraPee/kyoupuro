@@ -29,16 +29,33 @@ def main():
   def Is_s(): return map(int,input().split())
 
   n = I()
-  s = S()
+  a = i_list()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  gusu = []
+  kisu = []
+
+  for i in a :
+    if i % 2 == 0:
+      gusu.append(i)
+    else :
+      kisu.append(i)
+
+  res = []
+
+  if len(gusu) >= 2 :
+    gusu = sorted(gusu,reverse = True)
+    res.append(gusu[0]+gusu[1])
+
+
+  if len(kisu) >= 2:
+    kisu = sorted(kisu,reverse = True)
+    res.append(kisu[0]+kisu[1])
+
+  if len(res) == 0:
+    print(-1)
+  else :
+    print(max(res))
+
 
 
 

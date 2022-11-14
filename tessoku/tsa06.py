@@ -28,18 +28,25 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
-  s = S()
+  n,q = Is_s()
+  a = i_list()
 
+  ruiseki = [0]
+  res = 0
   for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+    res += a[i]
+    ruiseki.append(res)
 
+  #print(ruiseki)
+
+  lr_list  = []
+
+  for i in range(q):
+    l,r = Is_s()
+    lr_list.append([l,r])
+
+  for i in range(q):
+    print(ruiseki[lr_list[i][1]] - ruiseki[lr_list[i][0]-1])
 
 
 

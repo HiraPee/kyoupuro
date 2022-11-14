@@ -28,17 +28,58 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
-  n = I()
-  s = S()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  a,b = Is_s()
+
+  if a == 6 :
+    a = [2,4]
+  elif a == 5:
+    a = [1,4]
+
+  elif a == 3:
+    a = [1,2]
+
+  else :
+    a = [a]
+
+  if b == 6 :
+    b =  [2,4]
+  elif b == 5:
+    b = [1,4]
+
+  elif b == 3:
+    b = [1,2]
+
+  else :
+    b = [b]
+
+  num = {}
+
+  for i in range(len(a)):
+    if a[i] in num :
+      num[a[i]] += 1
+    else :
+      if a[i] == 0:
+        continue
+      num[a[i]] = 1
+
+  for i in range(len(b)):
+    if b[i] in num :
+      num[b[i]] += 1
+    else :
+      if b[i] == 0 :
+        continue
+      num[b[i]] = 1
+
+  #print(num)
+
+
+  ans = 0
+
+  for value in num.keys():
+    ans += int(value)
+
+  print(ans)
 
 
 

@@ -29,16 +29,14 @@ def main():
   def Is_s(): return map(int,input().split())
 
   n = I()
-  s = S()
 
-  for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+  binary_n = bin(n)[2:]
+
+  for i in range(10 - len(binary_n)):
+    binary_n = '0' + binary_n
+
+
+  print(binary_n)
 
 
 

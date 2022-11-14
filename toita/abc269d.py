@@ -28,18 +28,16 @@ def main():
   def i_list(): return list(map(int,input().split()))
   def Is_s(): return map(int,input().split())
 
+  num_list = []
+
   n = I()
-  s = S()
+
+  max_x,max_y = -1,-1
 
   for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+    x,y = Is_s()
 
+    max_x = max()
 
 
 

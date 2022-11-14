@@ -29,16 +29,19 @@ def main():
   def Is_s(): return map(int,input().split())
 
   n = I()
-  s = S()
+
+  a = []
 
   for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+    input_a = I()
+    a.append(input_a)
+
+  for i in range(1,n-1):
+    print(a[:i],a[i+1:])
+    a_1 = max(a[:i])
+    a_2 = max(a[i+1:])
+    print(max(a_1,a_2))
+
 
 
 

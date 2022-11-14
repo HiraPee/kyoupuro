@@ -29,17 +29,18 @@ def main():
   def Is_s(): return map(int,input().split())
 
   n = I()
-  s = S()
+
+  p = i_list()
+
+  ans = [0] * n
 
   for i in range(n):
-    if s[i] == '1':
-      if i%2==0:
-        print('Takahashi')
-        exit()
-      else :
-        print('Aoki')
-        exit()
+    ans[p[i]-1] = i+1
 
+  #ans =  sorted(ans,key=lambda x: x[0])
+
+  for i in range(n):
+    print(ans[i],end=" ")
 
 
 
